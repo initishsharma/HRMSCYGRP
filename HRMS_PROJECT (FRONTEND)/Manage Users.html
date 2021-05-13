@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CYBER GROUP - Manage Users</title>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Datta Able Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs."
+    />
+    <meta
+      name="keywords"
+      content="admin templates, bootstrap admin templates, bootstrap 4, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, datta able, datta able bootstrap admin template, free admin theme, free dashboard template"
+    />
+    <meta name="author" content="CodedThemes" />
+
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+    <!-- fontawesome icon -->
+    <link
+      rel="stylesheet"
+      href="assets/fonts/fontawesome/css/fontawesome-all.min.css"
+    />
+    <!-- animation css -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/animation/css/animate.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9/sha256.js"></script>
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      #success_message{ display: none;}
+    </style>
+
+
+
+  </head>
+
+  <body  onload="EmployeeFetchData();">
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+      <div class="loader-track">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+
+    <!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar">
+      <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+          <a href="index.html" class="b-brand">
+            <div>
+              <img
+                src="./assets/images/logo.png"
+                style="width: 80px; height: 90px;padding-top: 5px;"
+              />
+            </div>
+            
+          </a>
+          <a class="mobile-menu" id="mobile-collapse" href="javascript:"
+            ><span></span
+          ></a>
+        </div>
+        <div class="navbar-content scroll-div">
+          <ul class="nav pcoded-inner-navbar">
+            <li class="nav-item pcoded-menu-caption">
+              <!-- <label>Navigation</label> -->
+            </li>
+            <li
+              data-username="dashboard Default Ecommerce CRM Analytics Crypto Project"
+              class="nav-item"
+            >
+              <a href="index.html" class="nav-link"
+                ><span class="pcoded-micon"
+                  ><i class="feather icon-home"></i></span
+                ><span class="pcoded-mtext">Dashboard</span></a
+              >
+            </li>
+         
+            <!-- <li class="nav-item pcoded-menu-caption">
+              <label>Pages</label>
+          </li> -->
+          <li data-username="form elements advance componant validation masking wizard picker select" class="nav-item active">
+              <a href="./Manage Users.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span class="pcoded-mtext">Manage Users</span></a>
+          </li>
+            <!-- <li class="nav-item pcoded-menu-caption">
+              <label>Leave Portal</label>
+            </li> -->
+            <li
+              data-username="form elements advance componant validation masking wizard picker select"
+              class="nav-item"
+            >
+              <a href="./Personal Time Off.html" class="nav-link"
+                ><span class="pcoded-micon"
+                  ><i class="feather icon-file-text"></i></span
+                ><span class="pcoded-mtext">Personal Time Off</span></a
+              >
+            </li>
+            <li
+              data-username="Table bootstrap datatable footable"
+              class="nav-item"
+            >
+              <a href="./Holiday List.html" class="nav-link"
+                ><span class="pcoded-micon"
+                  ><i class="feather icon-server"></i></span
+                ><span class="pcoded-mtext">Holiday List</span></a
+              >
+            </li>
+          
+          
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- [ navigation menu ] end -->
+
+    <!-- [ Header ] start -->
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light">
+      <div class="m-header">
+        <a class="mobile-menu" id="mobile-collapse1" href="javascript:"
+          ><span></span
+        ></a>
+        <a href="index.html" class="b-brand">
+          <div>
+            <img
+              src="./assets/images/logo.png"
+              style="width: 80px; height: 90px;padding-top: 5px;"
+            />
+          </div>
+        
+        </a>
+      </div>
+      <a class="mobile-menu" id="mobile-header" href="javascript:">
+        <i class="feather icon-more-horizontal"></i>
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li>
+            <a
+              href="javascript:"
+              class="full-screen"
+              onclick="javascript:toggleFullScreen()"
+              ><i class="feather icon-maximize"></i
+            ></a>
+          </li>
+          <li class="nav-item">
+            <div class="main-search">
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="m-search"
+                  class="form-control"
+                  placeholder="Search . . ."
+                />
+                <a href="javascript:" class="input-group-append search-close">
+                  <i class="feather icon-x input-group-text"></i>
+                </a>
+                <span class="input-group-append search-btn btn btn-primary">
+                  <i class="feather icon-search input-group-text"></i>
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li>
+            <div class="dropdown drp-user">
+              <a
+                href="javascript:"
+                class="dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="icon feather icon-settings"></i>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right profile-notification"
+              >
+                <div class="pro-head">
+                  <img
+                    src="assets/images/user/avatar-1.jpg"
+                    class="img-radius"
+                    alt="User-Profile-Image"
+                  />
+                  <span>USER</span>
+                 
+                </div>
+                <ul class="pro-body">
+                  <li>
+                    <a href="javascript:" class="dropdown-item"
+                      ><i class="feather icon-user"></i> Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./SignIn.html" class="dropdown-item"
+                      ><i class="feather icon-lock"></i> Lock Screen</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- [ Header ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+      <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+          <div class="pcoded-inner-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+              <div class="page-block">
+                <div class="row align-items-center">
+                  <div class="col-md-12">
+                    <div class="page-header-title">
+                      <h3 style="padding-left:15px;margin-bottom:15px;">Manage Users</h3>
+                    </div>
+                    <ul style="padding-left:15px"  class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="index.html"
+                          ><i class="feather icon-home"></i
+                        ></a>
+                      </li>
+                      <!-- <li class="breadcrumb-item">
+                        <a href="javascript:">Pages</a>
+                      </li> -->
+                      <li class="breadcrumb-item">
+                        <a href="javascript:">Manage Users</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+              <div class="page-wrapper">
+                <div class="container">
+
+<!-- Button trigger modal -->
+  <button type="button" class="btn btn-secondary m-t-10" data-toggle="modal" data-target="#staticBackdrop">
+  <i class="fas fa-user-plus"></i>Add
+</button> 
+<br><br>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add Employee</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+        <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+          <fieldset>
+          
+         
+          <!-- Text input-->
+          
+          <div class="form-group">
+            <label class="col-md-8 control-label">Employee Name</label>  
+            <div class="col-md-8 inputGroupContainer">
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="first_name" id="empname" placeholder="Employee Name" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Text input-->
+          
+          <div class="form-group">
+            <label class="col-md-8 control-label" >Email Id</label> 
+              <div class="col-md-8 inputGroupContainer">
+              <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="last_name" id="empemailid" placeholder="Email Id" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+          
+           
+        
+          
+          <!-- Text input-->
+          
+          <div class="form-group">
+            <label class="col-md-8 control-label" >Password</label> 
+              <div class="col-md-8 inputGroupContainer">
+              <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="user_password" id="emppass" placeholder="Password" class="form-control"  type="password">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Text input-->
+          
+         
+          
+          <!-- Text input-->
+                 
+          <div class="form-group">
+            <label class="col-md-8 control-label">Contact No.</label>  
+              <div class="col-md-8 inputGroupContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="contact_no" id="empcontact" placeholder="(+91)" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group"> 
+            <label class="col-md-8 control-label">Designation</label>
+              <div class="col-md-8 selectContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+              <select id="empdesg" name="department" class="form-control selectpicker">
+                <option value="">Select Designation</option>
+                <option>Manager</option>
+                <option>Employee</option>
+              </select>
+            </div>
+          </div>
+          </div>
+            
+          <div class="form-group"> 
+            <label class="col-md-8 control-label">Appointed Manager</label>
+              <div class="col-md-8 selectContainer">
+              <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+              <select id="managernamelist" name="department" class="form-control selectpicker">
+                <option  value="">Select Apointed Manager</option>
+                       
+              </select>
+            </div>
+          </div>
+          </div>          
+          </fieldset>
+          </form>
+      </div>
+      <div class="modal-footer">
+       
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="AddEmployee()">Add New Employee</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+              </div>
+                  </div><!-- /.container -->
+                  <!-- [ Hover-table ] start -->
+                  <div class="col-xl-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <h5>Employees</h5>
+                      </div>
+                      <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                          <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Employee Name</th>
+                                <th>Email Id</th>
+                                <th>Designation</th>
+                                <th>Contact</th>
+                                <th>Appointed Manager</th>
+                              </tr>
+                            </thead>
+                            <tbody id="employeedata">
+                             
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- [ Hover-table ] end -->
+               
+                <!-- [ Main Content ] end -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/pcoded.min.js"></script>
+    <script src="./signin-manage.js"></script>
+    <script src="./managerlist.js"></script>
+    <script src="./pto.js"></script>
+  </body>
+</html>
